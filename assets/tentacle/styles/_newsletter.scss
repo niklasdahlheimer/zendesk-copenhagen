@@ -1,0 +1,120 @@
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold !important;
+  position: relative;
+  z-index: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#tts-zendesk-webform > p {
+  text-align: center;
+}
+/* phone */
+@media (max-width: 684px) {
+  .footer .find-us.menu-link .find-us-text {
+    display: none;
+  }
+}
+
+/* Clever-Elements-Newsletter */
+
+body#newsletterModal {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+#newsletterModal .modal-content {
+  background-color: #fefefe;
+  padding-bottom: 2em;
+  position: relative;
+  overflow: hidden;
+  height: 860px;
+}
+
+.modal-content.iframe-form-submitted {
+  height: 400px !important;
+  padding-top: 2em;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  filter: chroma(color= "#FFFFFF");
+  border: 0;
+  padding-top: 1em;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+}
+
+@media (max-width: 974px) {
+  #newsletterModal {
+    z-index: 1000000;
+  }
+}
+
+@media (max-width: 484px) {
+  iframe {
+    padding-top: 1em;
+  }
+
+  #newsletterModal .modal-content {
+    background-color: #fefefe;
+    height: 980px;
+    margin: 0 auto;
+    max-width: 600px;
+    max-width: unset;
+  }
+
+  #newsletterModal .modal-content.iframe-form-submitted {
+    height: 500px !important;
+    vertical-align: center;
+    padding-top: 20%;
+  }
+}

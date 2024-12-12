@@ -1,0 +1,20 @@
+/*this is intended to overwrite copenhagen theme specific css rules*/
+
+h1,
+h2 {
+  font-size: 1.9rem;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+  color: $brand_color;
+}
+
+.form{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}

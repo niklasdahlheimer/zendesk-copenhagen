@@ -1,0 +1,90 @@
+/* icons */
+
+.with-icon {
+  /*margin-top: 100px;*/
+  margin-top: 130px;
+  position: relative;
+  overflow: visible;
+}
+.with-icon::before {
+  font-family: "tts-iconfont";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  padding: 15px;
+  background-color: $brand_color;
+  color: #fff;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  border-radius: 80px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  position: absolute;
+  top: -120px;
+  line-height: 50px;
+  left: 50%;
+  margin-left: -40px;
+}
+.arrows::before {
+  content: "\e906";
+  font-size: 40px;
+}
+.battery::before {
+  content: "\e904";
+  font-size: 40px;
+}
+.chair::before {
+  content: "\e602";
+}
+.clapperboard::before {
+  content: "\e903";
+  font-size: 35px;
+}
+.cogs::before {
+  content: "\e90E";
+}
+.document::before {
+  content: "\e901";
+}
+.film::before {
+  content: "\e609";
+}
+.laptop::before {
+  content: "\e601";
+  line-height: 56px;
+}
+.lightbulb::before {
+  content: "\e90C";
+}
+.lightning::before {
+  content: "\e909";
+  font-size: 40px;
+}
+.piggybank::before {
+  content: "\e907";
+  font-size: 40px;
+}
+.speech::before {
+  content: "\e905";
+  font-size: 40px;
+  line-height: 56px;
+}
+.timer::before {
+  content: "\e908";
+  font-size: 40px;
+  line-height: 44px;
+}
+.youtube::before {
+  content: "\e90d";
+  font-size: 40px;
+  line-height: 50px;
+}

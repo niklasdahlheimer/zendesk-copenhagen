@@ -1,0 +1,47 @@
+// Hero section
+.hero {
+  background-image: none;
+  background-color: #323232;
+
+  h2,
+  p {
+    color: white;
+  }
+
+  .search-container {
+    position: relative;
+  }
+}
+
+// categories section
+.teasers {
+  text-align: center;
+  //padding: 50px 0;
+}
+
+.teasers h2 {
+  margin-bottom: 63px;
+}
+
+// FAQ section
+.promoted-articles {
+  flex-direction: column;
+  list-style: inherit;
+
+  li::marker {
+    color: $brand_color;
+  }
+
+  .promoted-articles-item a {
+    border-bottom: none;
+    padding: 0.2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .promoted-articles {
+    .promoted-articles-item {
+      width: 80%;
+    }
+  }
+}

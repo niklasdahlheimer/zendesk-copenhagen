@@ -1,6 +1,5 @@
 {
-
-  "name": "Tentacle 2025 (Copenhagen)",
+  "name": "Copenhagen Tentacle 2025",
   "author": "Tentacle Sync",
   "version": "4.0.12",
   "api_version": 4,
@@ -70,6 +69,10 @@
           "label": "heading_font_label",
           "options": [
             {
+              "label": "BikoBold",
+              "value": "BikoBold, Helvetica, Arial, sans-serif"
+            },
+            {
               "label": "System",
               "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
             },
@@ -134,7 +137,7 @@
               "value": "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
             }
           ],
-          "value": "BikoBold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+          "value": "BikoBold, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif"
         },
         {
           "identifier": "text_font",

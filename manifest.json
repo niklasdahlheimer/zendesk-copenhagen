@@ -69,10 +69,6 @@
           "label": "heading_font_label",
           "options": [
             {
-              "label": "Biko Bold",
-              "value": "'Biko Bold', sans-serif"
-            },
-            {
               "label": "System",
               "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
             },
@@ -129,7 +125,7 @@
               "value": "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
             }
           ],
-          "value": "'Biko Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
         },
         {
           "identifier": "text_font",
@@ -137,10 +133,6 @@
           "description": "text_font_description",
           "label": "text_font_label",
           "options": [
-            {
-              "label": "CalibreWeb-Light",
-              "value": "CalibreWeb-Light, sans-serif"
-            },
             {
               "label": "System",
               "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
@@ -206,7 +198,7 @@
               "value": "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"
             }
           ],
-          "value": "CalibreWeb-Light, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
         }
       ]
     },

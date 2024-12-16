@@ -1,24 +1,24 @@
 @font-face {
   font-family: "Biko Bold";
-  src: url("$assets-Biko_Bold-woff") format("woff");
-  src: url("$assets-Biko_Bold-otf") format("truetype");
-  src: url("$assets-Biko_Bold-ttf") format("truetype");
+  src: url("$assets-biko_bold-woff") format("woff");
+  src: url("$assets-biko_bold-eot") format("truetype");
+  src: url("$assets-biko_bold-ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "CalibreWeb-Light";
-  src: url("$assets-CalibreWeb-Light-eot"); /*IE9 compat*/
-  src: url("$assets-CalibreWeb-Light-woff") format("woff");
+  font-family: "CalibreWeb Light";
+  src: url("$assets-calibreweb-light-eot"); /*IE9 compat*/
+  src: url("$assets-calibreweb-light-woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "CalibreWeb-Bold";
-  src: url("$assets-CalibreWeb-Bold-eot"); /*IE9 compat*/
-  src: url("$assets-CalibreWeb-Bold-woff") format("woff");
+  font-family: "CalibreWeb Bold";
+  src: url("$assets-calibreweb-bold-eot"); /*IE9 compat*/
+  src: url("$assets-calibreweb-bold-woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }

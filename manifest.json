@@ -138,8 +138,8 @@
           "label": "text_font_label",
           "options": [
             {
-              "label": "CalibreWeb-Light",
-              "value": "CalibreWeb-Light, sans-serif"
+              "label": "CalibreWeb Light",
+              "value": "'CalibreWeb Light', sans-serif"
             },
             {
               "label": "System",

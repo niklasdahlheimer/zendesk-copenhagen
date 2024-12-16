@@ -1,0 +1,3 @@
+- all assets must be placed directly in the asets folder, not into subfolders. Otherwise linking with theme variables ("$assets-..") wont work
+- referenced variables have to be written strictly in small case letters and with "-" between filename and extension (i.e. $assets-biko_bold-woff)
+- do NOT edit style.css directly because its computed from the npm scripts. instead add your changes to the assets/*.css files

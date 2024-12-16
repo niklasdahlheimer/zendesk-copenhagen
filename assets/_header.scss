@@ -1,5 +1,10 @@
 $tentacle_header_height: 40px;
 
+// remove original zendesk header
+header.header{
+  display: none;
+}
+
 main {
   margin-top: $tentacle_header_height;
 }

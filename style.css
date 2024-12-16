@@ -4721,7 +4721,7 @@ zd-summary-block {
 }
 
 @font-face {
-  font-family: "BikoBold";
+  font-family: "Biko Bold";
   src: url("$assets-Biko_Bold-woff") format("woff");
   src: url("$assets-Biko_Bold-otf") format("truetype");
   src: url("$assets-Biko_Bold-ttf") format("truetype");
@@ -5079,7 +5079,7 @@ main {
 .menu__link,
 .menu-link {
   text-decoration: none;
-  font-family: "BikoBold", Helvetica, Arial, sans-serif;
+  font-family: "Biko Bold", Helvetica, Arial, sans-serif;
   color: #8c8c8c;
   text-transform: uppercase;
   font-size: 15px;
@@ -5258,7 +5258,7 @@ main {
 
 .tentacle-footer .funding-state {
   text-decoration: none;
-  font-family: "BikoBold", Helvetica, Arial, sans-serif;
+  font-family: "Biko Bold", Helvetica, Arial, sans-serif;
   color: #8c8c8c;
   text-transform: uppercase;
   font-size: 15px;
@@ -5445,7 +5445,7 @@ main {
 
 .tentacle-footer .preorder-button,
 .tentacle-footer .forum-button {
-  font-family: "BikoBold", Helvetica, Arial, sans-serif;
+  font-family: "Biko Bold", Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 22px;
   margin-bottom: 0px;
@@ -5474,7 +5474,7 @@ main {
   height: 30px;
   background-color: #ffffff;
   margin-top: 5px;
-  font-family: "BikoBold", Helvetica, Arial, sans-serif;
+  font-family: "Biko Bold", Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 22px;
   color: $brand_color;

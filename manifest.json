@@ -69,8 +69,8 @@
           "label": "heading_font_label",
           "options": [
             {
-              "label": "BikoBold",
-              "value": "'BikoBold', sans-serif"
+              "label": "Biko Bold",
+              "value": "'Biko Bold', sans-serif"
             },
             {
               "label": "System",
@@ -129,7 +129,7 @@
               "value": "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
             }
           ],
-          "value": "BikoBold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+          "value": "'Biko Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
         },
         {
           "identifier": "text_font",

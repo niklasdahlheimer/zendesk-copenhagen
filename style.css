@@ -4722,7 +4722,9 @@ zd-summary-block {
 
 @font-face {
   font-family: "BikoBold";
-  src: url("./assets/tentacle/fonts/Biko_Bold.woff") format("woff"), url("./assets/tentacle/fonts/Biko_Bold.otf") format("truetype"), url("./assets/tentacle/fonts/Biko_Bold.ttf") format("truetype");
+  src: url("./assets/tentacle/fonts/Biko_Bold.woff") format("woff");
+  src: url("./assets/tentacle/fonts/Biko_Bold.otf") format("truetype");
+  src: url("./assets/tentacle/fonts/Biko_Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

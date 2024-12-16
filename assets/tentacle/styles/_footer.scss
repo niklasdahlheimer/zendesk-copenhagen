@@ -7,16 +7,19 @@
   position: relative;
   display: block !important;
 }
+
 .tentacle-footer .social-link {
   position: relative;
   fonz-size: 0;
   line-height: 0;
   height: 36px;
 }
+
 .tentacle-footer .logo-column {
   float: left;
   margin-right: 30px;
 }
+
 .tentacle-footer .logo-column .logo {
   height: 11px;
   width: 114px;
@@ -26,25 +29,30 @@
   z-index: 10;
   position: relative;
 }
+
 .tentacle-footer .logo-column .logo:before {
   display: none;
   visibility: hidden;
 }
+
 .tentacle-footer a {
   display: block;
   margin: 0;
   padding: 0;
   max-height: 100% !important;
 }
+
 .tentacle-footer .menu {
   display: flex;
   justify-content: space-around;
   padding-top: 2px;
 }
+
 .tentacle-footer .links {
   float: left;
   padding-top: 10px;
 }
+
 .tentacle-footer .funding-state {
   text-decoration: none;
   font-family: "BikoBold", Helvetica, Arial, sans-serif;
@@ -59,17 +67,21 @@
   color: rgba(255, 255, 255, 0.4);
   line-height: 40px;
 }
+
 .tentacle-footer .funding-state .white {
   color: #fff;
 }
+
 .tentacle-footer .find-us.menu-link {
   color: #fff;
   margin-top: 2px;
 }
+
 .tentacle-footer .find-us.menu-link span {
   float: left;
   color: #fff;
 }
+
 .tentacle-footer .find-us.menu-link .social-link {
   overflow: hidden;
   width: 0;
@@ -86,13 +98,16 @@
   -ms-transition: all 200ms;
   -o-transition: all 200ms;
 }
+
 .tentacle-footer .find-us.menu-link .social-link:hover {
   color: rgba(255, 255, 255, 0.4);
 }
+
 .tentacle-footer .find-us.menu-link .twitter-link {
   padding-left: 23px;
   margin-left: 20px;
 }
+
 .tentacle-footer .find-us.menu-link .twitter-link:before {
   position: absolute;
   left: 0;
@@ -110,10 +125,12 @@
   -moz-osx-font-smoothing: grayscale;
   content: "\e605";
 }
+
 .tentacle-footer .find-us.menu-link .instagram-link {
   padding-left: 23px;
   margin-left: 20px;
 }
+
 .tentacle-footer .find-us.menu-link .instagram-link:before {
   position: absolute;
   left: 0;
@@ -131,10 +148,12 @@
   -moz-osx-font-smoothing: grayscale;
   content: "\e60b";
 }
+
 .tentacle-footer .find-us.menu-link .facebook-link {
   padding-left: 20px;
   margin-left: 20px;
 }
+
 .tentacle-footer .find-us.menu-link .facebook-link:before {
   position: absolute;
   left: 0;
@@ -152,10 +171,12 @@
   -moz-osx-font-smoothing: grayscale;
   content: "\e603";
 }
+
 .tentacle-footer .find-us.menu-link .google-plus-link {
   padding-left: 30px;
   margin-left: 20px;
 }
+
 .tentacle-footer .find-us.menu-link .google-plus-link:before {
   position: absolute;
   left: 0;
@@ -172,10 +193,12 @@
   -moz-osx-font-smoothing: grayscale;
   content: "\e604";
 }
+
 .tentacle-footer .find-us.menu-link .vimeo-link {
   padding-left: 22px;
   margin-left: 20px;
 }
+
 .tentacle-footer .find-us.menu-link .vimeo-link:before {
   position: absolute;
   left: 0;
@@ -193,10 +216,12 @@
   -moz-osx-font-smoothing: grayscale;
   content: "\e606";
 }
+
 .tentacle-footer .find-us.menu-link .youtube-link {
   padding-left: 26px;
   margin-left: 20px;
 }
+
 .tentacle-footer .find-us.menu-link .youtube-link:before {
   position: absolute;
   left: 0;
@@ -214,6 +239,7 @@
   -moz-osx-font-smoothing: grayscale;
   content: "\e607";
 }
+
 .tentacle-footer .preorder-button,
 .tentacle-footer .forum-button {
   font-family: "BikoBold", Helvetica, Arial, sans-serif;
@@ -231,13 +257,16 @@
   cursor: pointer;
   text-decoration: none;
 }
+
 .tentacle-footer .preorder-button:hover,
 .tentacle-footer .forum-button:hover {
   color: rgba(255, 255, 255, 0.4);
 }
+
 .tentacle-footer .forum-button {
   margin-left: 0;
 }
+
 .tentacle-footer #countdown {
   height: 30px;
   background-color: #ffffff;
@@ -251,23 +280,28 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .tentacle-footer #countdown .time-wrapper {
   display: inline-block;
   width: 22px;
 }
+
 .tentacle-footer #countdown .grey {
   color: #8c8c8c;
 }
+
 .tentacle-footer #countdown .superscript {
   position: relative;
   top: -3px;
 }
+
 .tentacle-footer .menu-link {
   display: block;
   color: #ffffff;
   float: right;
   /* line-height: 44px; */
 }
+
 .tentacle-footer {
   background: #323232;
   height: 80px;
@@ -275,10 +309,12 @@
   box-sizing: border-box;
   z-index: 99999;
 }
+
 .tentacle-footer .logo-column {
   float: left;
   margin-right: 30px;
 }
+
 .tentacle-footer .logo {
   height: 11px;
   width: 114px;
@@ -286,6 +322,7 @@
   z-index: 10;
   position: relative;
 }
+
 .tentacle-footer .links {
   float: left;
   padding-top: 10px;

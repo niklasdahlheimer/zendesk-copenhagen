@@ -5,4 +5,4 @@ import "./dropdowns";
 import "./share";
 import "./search";
 import "./forms";
-import "../assets/tentacle/js/modal";
+import "../assets/modal";

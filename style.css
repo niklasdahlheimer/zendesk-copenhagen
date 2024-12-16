@@ -4722,29 +4722,30 @@ zd-summary-block {
 
 @font-face {
   font-family: "BikoBold";
-  src: url("./assets/tentacle/fonts/Biko_Bold.woff") format("woff");
-  src: url("./assets/tentacle/fonts/Biko_Bold.otf") format("truetype");
-  src: url("./assets/tentacle/fonts/Biko_Bold.ttf") format("truetype");
+  src: url("$assets-Biko_Bold-woff") format("woff");
+  src: url("$assets-Biko_Bold-otf") format("truetype");
+  src: url("$assets-Biko_Bold-ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "CalibreWeb-Light";
-  src: url("./assets/tentacle/fonts/CalibreWeb-Light.eot"); /*IE9 compat*/
-  src: url("./assets/tentacle/fonts/CalibreWeb-Light.woff") format("woff");
+  src: url("$assets-CalibreWeb-Light-eot"); /*IE9 compat*/
+  src: url("$assets-CalibreWeb-Light-woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "CalibreWeb-Bold";
-  src: url("./assets/tentacle/fonts/CalibreWeb-Bold.eot"); /*IE9 compat*/
-  src: url("./assets/tentacle/fonts/CalibreWeb-Bold.woff") format("woff");
+  src: url("$assets-CalibreWeb-Bold-eot"); /*IE9 compat*/
+  src: url("$assets-CalibreWeb-Bold-woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "tts-iconfont";
-  src: url("./assets/tentacle/fonts/tts-iconfont.woff") format("woff"), url("./assets/tentacle/fonts/tts-iconfont.ttf") format("truetype");
+  src: url("$assets-tts-iconfont-woff") format("woff");
+  src: url("$assets-tts-iconfont-ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -5021,7 +5022,7 @@ main {
 .fixed-menu .menu-wrapper .logo-column .logo {
   height: 11px;
   width: 114px;
-  background-image: url("./assets/tentacle/img/tentaclesync-logo-wortmarke-weiss-2x.png");
+  background-image: url("./assets/tentaclesync-logo-wortmarke-weiss-2x.png");
   background-size: 100%;
   margin-left: 118px;
   margin-top: 12px;
@@ -5056,7 +5057,7 @@ main {
 }
 
 .fixed-menu.white .menu-wrapper .logo-column .logo {
-  background-image: url("./assets/tentacle/img/tentaclesync-logo-wortmarke-schwarz-2x.png");
+  background-image: url("./assets/tentaclesync-logo-wortmarke-schwarz-2x.png");
   background-size: 100%;
 }
 
@@ -5225,7 +5226,7 @@ main {
 .tentacle-footer .logo-column .logo {
   height: 11px;
   width: 114px;
-  background: url("./assets/tentacle/img/tentaclesync-logo-wortmarke-weiss-2x.png");
+  background: url("./assets/tentaclesync-logo-wortmarke-weiss-2x.png");
   background-size: 100%;
   margin-top: 15px;
   z-index: 10;

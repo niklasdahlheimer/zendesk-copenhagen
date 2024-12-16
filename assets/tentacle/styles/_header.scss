@@ -12,29 +12,35 @@ main {
   margin: 0 auto;
   padding: 0 1.38888889%;
 }
+
 .menu-wrapper,
 .section-wrapper {
   width: 100%;
   max-width: 875px;
   margin: 0 auto;
 }
+
 .menu a:hover {
   text-decoration: none;
 }
+
 .row {
   display: block;
   width: 102.7777777778%;
   margin: 0 -1.3888888889%;
   *zoom: 1;
 }
+
 .row:before,
 .row:after {
   content: "";
   display: table;
 }
+
 .row:after {
   clear: both;
 }
+
 .menu-column {
   display: inline;
   float: left;
@@ -44,13 +50,16 @@ main {
   text-align: justify;
   height: $tentacle_header_height;
 }
+
 .menu-column ul {
   text-align: justify;
   width: 100%;
 }
+
 .menu-column ul li {
   display: inline-block;
 }
+
 .menu-link {
   text-decoration: none;
   font-family: "BikoBold", Helvetica, Arial, sans-serif;
@@ -63,10 +72,12 @@ main {
     line-height: "2rem";
     margin-bottom: "0rem";*/
 }
+
 .menu-link.active,
 .menu-link:hover {
   color: #ff4600;
 }
+
 .fixed-menu {
   position: fixed;
   top: 0;
@@ -80,9 +91,11 @@ main {
   -ms-transition: all 200ms;
   -o-transition: all 200ms;
 }
+
 .fixed-menu .menu-wrapper {
   position: relative;
 }
+
 .fixed-menu .menu-wrapper .menu-column {
   display: inline;
   float: left;
@@ -90,6 +103,7 @@ main {
   margin: 0 1.3888888889%;
   margin-left: 1.3888888889%;
 }
+
 .fixed-menu .menu-wrapper .logo-column {
   display: inline;
   float: left;
@@ -97,6 +111,7 @@ main {
   margin: 0 1.3888888889%;
   height: $tentacle_header_height;
 }
+
 .fixed-menu .menu-wrapper .logo-column .logo {
   height: 11px;
   width: 114px;
@@ -107,6 +122,7 @@ main {
   z-index: 10;
   position: relative;
 }
+
 .fixed-menu .menu-wrapper .menu-link {
   transition: all 200ms;
   -webkit-transition: all 200ms;
@@ -115,35 +131,44 @@ main {
   -o-transition: all 200ms;
   color: rgba(255, 255, 255, 0.4);
 }
+
 .fixed-menu .menu-wrapper .menu-link.active,
 .fixed-menu .menu-wrapper .menu-link:hover {
   color: #fff;
 }
+
 .fixed-menu.expanded {
   top: 0;
 }
+
 .fixed-menu.white {
   background: #f5f5f5;
 }
+
 .fixed-menu.white .logo-column:after {
   color: #f5f5f5;
 }
+
 .fixed-menu.white .menu-wrapper .logo-column .logo {
   background-image: url("./assets/tentacle/img/tentaclesync-logo-wortmarke-schwarz-2x.png");
   background-size: 100%;
 }
+
 .fixed-menu.white .menu-wrapper .menu-link {
   color: rgba(50, 50, 50, 0.4) !important;
 }
+
 .fixed-menu.white .menu-wrapper .menu__link.active,
 .fixed-menu.white .menu-wrapper .menu-link.active,
 .fixed-menu.white .menu-wrapper .menu__link:hover,
 .fixed-menu.white .menu-wrapper .menu-link:hover {
   color: #ff4600 !important;
 }
+
 .fixed-menu .menu-wrapper .logo-column .logo {
   margin-left: 0;
 }
+
 .menu__link,
 .menu-link {
   text-decoration: none;
@@ -157,6 +182,7 @@ main {
     line-height: "2rem";
     margin-bottom: "0rem";*/
 }
+
 .menu__link.active,
 .menu__link:hover,
 .menu__link.is-active-trail,
@@ -165,9 +191,11 @@ main {
 .menu__link:active {
   color: #fff !important;
 }
+
 .fixed-menu {
   z-index: 99999;
 }
+
 .fixed-menu .menu__link,
 .fixed-menu .menu-link {
   transition: all 200ms;
@@ -177,6 +205,7 @@ main {
   -o-transition: all 200ms;
   color: rgba(255, 255, 255, 0.4);
 }
+
 .fixed-menu .menu__link.active,
 .fixed-menu .menu__link:hover,
 .fixed-menu .menu-link.active,
@@ -192,6 +221,7 @@ main {
 .fixed-menu.white .menu-wrapper .menu-link {
   color: rgba(50, 50, 50, 0.4);
 }
+
 .fixed-menu.white .menu-wrapper .menu__link.active,
 .fixed-menu.white .menu-wrapper .menu__link:hover,
 .fixed-menu.white .menu-wrapper .menu__link.is-active-trail,
@@ -199,34 +229,42 @@ main {
 .fixed-menu.white .menu-wrapper .menu-link:hover {
   color: #ff4600;
 }
+
 .fixed-menu .menu {
   display: flex;
   justify-content: space-between;
 }
+
 .fixed-menu .menu ul {
   display: none;
 }
+
 .fixed-menu .menu li {
   position: relative;
 }
+
 .fixed-menu .menu li:hover ul {
   display: block;
   position: absolute;
   top: $tentacle_header_height;
   left: -15px;
 }
+
 .fixed-menu .menu li.highlighted a {
   background-color: white !important;
   color: $brand_color !important;
   padding: 7px 3px 4px 3px;
 }
+
 .fixed-menu .menu li ul {
   background: #ff4600;
   width: 240px;
 }
+
 .fixed-menu .menu li ul li {
   display: block;
 }
+
 .fixed-menu .menu li ul li a {
   display: block;
   font-size: 15px;
@@ -234,18 +272,22 @@ main {
   padding: 13px 15px 9px 15px;
   color: white !important;
 }
+
 .fixed-menu .menu li ul li a.active,
 .fixed-menu .menu li ul li a:hover {
   background: white;
   color: #ff4600 !important;
 }
+
 .white .menu-column .menu li.highlighted a {
   background-color: $brand_color !important;
   color: white !important;
 }
+
 .fixed-menu .menu-wrapper .logo-column .logo {
   margin-left: 0;
 }
+
 .logo-column.special:after {
   display: none;
   visibility: hidden;

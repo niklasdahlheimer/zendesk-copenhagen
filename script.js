@@ -658,86 +658,477 @@
     }
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    function createModal(modalSelector, buttonSelector, onOpen) {
-      const modal = document.querySelector(modalSelector);
-      const button = document.querySelector(buttonSelector);
-      const closeButton = modal.querySelector(".close");
+  jQuery(document).ready(function ($) {
+      function modal(modalSelector, buttonSelector, onOpen) {
+          const modal = $(modalSelector);
 
-      // register eventListeners
-      if (button) {
-        button.addEventListener("click", function (event) {
-          event.preventDefault();
-          modal.style.display = "block";
-          if (onOpen) onOpen();
-        });
+          // register eventListeners
+          $(buttonSelector).click(function (event) {
+              event?.preventDefault();
+              modal.show();
+              onOpen?.();
+          });
+          $('.close', modal).click(function () {
+              modal.hide();
+          });
+          $(window).click(function (event) {
+              if (event.target === modal.get(0)) {
+                  modal.hide();
+              }
+          });
+          if (window.location.hash === buttonSelector) {
+              modal.show();
+              onOpen?.();
+          }
       }
 
-      if (closeButton) {
-        closeButton.addEventListener("click", function () {
-          modal.style.display = "none";
-        });
+      function initNewsletter() {
+          const closeButton = $('.close');
+          const overlay = $("#newsletterModal");
+          const newsletterContent = $("#newsletterModalContent");
+          const body = $('body');
+
+          const iframe = $('<iframe>', {
+              src: 'https://ea.sendcockpit.com/_s.php?&fid=51855&fpw=6facedf588ad3b1ea7b8a098438b3e88',
+              id: 'newsletterIFrame',
+              frameborder: "no",
+              scrolling: 'no',
+              allowtransparency: true,
+              class: "responsive-iframe",
+          });
+          newsletterContent.append(iframe);
+
+          body.addClass('no-scroll');
+
+          const closeModal = function () {
+              console.log("close modal triggered");
+              body.removeClass('no-scroll');
+              $("#newsletterIFrame").remove();
+              newsletterContent.removeClass('iframe-form-submitted');
+          };
+
+          closeButton.on("click", closeModal);
+          overlay.on("click", closeModal);
+
+          window.addEventListener("message", (event) => {
+              if (event.origin === "https://ea.sendcockpit.com") {
+                  document.getElementById("newsletterModalContent").classList.add("iframe-form-submitted");
+              }
+          }, false);
       }
 
-      window.addEventListener("click", function (event) {
-        if (event.target === modal) {
-          modal.style.display = "none";
+
+      modal('#newsletterModal', '#newsletter', initNewsletter);
+  });
+
+  /*!
+  * jQuery meanMenu v2.0.8
+  * @Copyright (C) 2012-2014 Chris Wharton @ MeanThemes (https://github.com/meanthemes/meanMenu)
+  *
+  */
+  /*
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+  *
+  * THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT
+  * HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED,
+  * INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR
+  * FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE
+  * OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS,
+  * COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.COPYRIGHT HOLDERS WILL NOT
+  * BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL
+  * DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+  *
+  * You should have received a copy of the GNU General Public License
+  * along with this program. If not, see <http://gnu.org/licenses/>.
+  *
+  * Find more information at http://www.meanthemes.com/plugins/meanmenu/
+  *
+  */
+  (function ($) {
+    var blockMenuHeaderScroll = false;
+    $(document).ready(function() {
+
+      $(window).on('touchmove', function(e)
+      {
+        if (blockMenuHeaderScroll)
+        {
+          e.preventDefault();
         }
       });
+    });
+  		$.fn.meanmenu = function (options) {
+  				var defaults = {
+  						meanMenuTarget: jQuery(this), // Target the current HTML markup you wish to replace
+  						meanMenuContainer: 'body', // Choose where meanmenu will be placed within the HTML
+  						meanMenuClose: "X", // single character you want to represent the close menu button
+  						meanMenuCloseSize: "18px", // set font size of close button
+  						meanMenuOpen: "<span /><span /><span /><span /><span />", // text/markup you want when menu is closed
+  						meanRevealPosition: "right", // left right or center positions
+  						meanRevealPositionDistance: "0", // Tweak the position of the menu
+  						meanRevealColour: "", // override CSS colours for the reveal background
+  						meanScreenWidth: "480", // set the screen width you want meanmenu to kick in at
+  						meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
+  						meanShowChildren: true, // true to show children in the menu, false to hide them
+  						meanExpandableChildren: true, // true to allow expand/collapse children
+  						meanExpand: "+", // single character you want to represent the expand for ULs
+  						meanContract: "-", // single character you want to represent the contract for ULs
+  						meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
+  						onePage: false, // set to true for one page sites
+  						meanDisplay: "block", // override display method for table cell based layouts e.g. table-cell
+  						removeElements: "" // set to hide page elements
+  				};
+  				options = $.extend(defaults, options);
 
-      if (window.location.hash === buttonSelector) {
-        modal.style.display = "block";
-        if (onOpen) onOpen();
-      }
-    }
+  				// get browser width
+  				var currentWidth = window.innerWidth || document.documentElement.clientWidth;
 
-    function initNewsletter() {
-      const closeButton = document.querySelector(".close");
-      const overlay = document.getElementById("newsletterModal");
-      const newsletterContent = document.getElementById("newsletterModalContent");
-      const body = document.body;
+  				return this.each(function () {
+  						var meanMenu = options.meanMenuTarget;
+  						var meanContainer = options.meanMenuContainer;
+  						options.meanMenuClose;
+  						var meanMenuCloseSize = options.meanMenuCloseSize;
+  						var meanMenuOpen = options.meanMenuOpen;
+  						var meanRevealPosition = options.meanRevealPosition;
+  						var meanRevealPositionDistance = options.meanRevealPositionDistance;
+  						var meanRevealColour = options.meanRevealColour;
+  						var meanScreenWidth = options.meanScreenWidth;
+  						var meanNavPush = options.meanNavPush;
+  						var meanRevealClass = ".meanmenu-reveal";
+  						var meanShowChildren = options.meanShowChildren;
+  						var meanExpandableChildren = options.meanExpandableChildren;
+  						var meanExpand = options.meanExpand;
+  						var meanContract = options.meanContract;
+  						var meanRemoveAttrs = options.meanRemoveAttrs;
+  						var onePage = options.onePage;
+  						var meanDisplay = options.meanDisplay;
+  						var removeElements = options.removeElements;
 
-      const iframe = document.createElement("iframe");
-      iframe.src =
-        "https://ea.sendcockpit.com/_s.php?&fid=51855&fpw=6facedf588ad3b1ea7b8a098438b3e88";
-      iframe.id = "newsletterIFrame";
-      iframe.frameBorder = "no";
-      iframe.scrolling = "no";
-      iframe.allowTransparency = true;
-      iframe.className = "responsive-iframe";
+  						//detect known mobile/tablet usage
+  						var isMobile = false;
+  						if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i)) || (navigator.userAgent.match(/Blackberry/i)) || (navigator.userAgent.match(/Windows Phone/i)) ) {
+  								isMobile = true;
+  						}
 
-      newsletterContent.appendChild(iframe);
+  						if ( (navigator.userAgent.match(/MSIE 8/i)) || (navigator.userAgent.match(/MSIE 7/i)) ) {
+  							// add scrollbar for IE7 & 8 to stop breaking resize function on small content sites
+  								jQuery('html').css("overflow-y" , "scroll");
+  						}
 
-      body.classList.add("no-scroll");
+  						var meanRevealPos = "";
+  						var meanCentered = function() {
+  							if (meanRevealPosition === "center") {
+  								var newWidth = window.innerWidth || document.documentElement.clientWidth;
+  								var meanCenter = ( (newWidth/2)-22 )+"px";
+  								meanRevealPos = "left:" + meanCenter + ";right:auto;";
 
-      const closeModal = function () {
-        body.classList.remove("no-scroll");
-        const iframeElement = document.getElementById("newsletterIFrame");
-        if (iframeElement) {
-          iframeElement.remove();
-        }
-        newsletterContent.classList.remove("iframe-form-submitted");
+  								if (!isMobile) {
+  									jQuery('.meanmenu-reveal').css("left",meanCenter);
+  								} else {
+  									jQuery('.meanmenu-reveal').animate({
+  											left: meanCenter
+  									});
+  								}
+  							}
+  						};
+
+  						var menuOn = false;
+  						var meanMenuExist = false;
+
+
+  						if (meanRevealPosition === "right") {
+  								meanRevealPos = "right:" + meanRevealPositionDistance + ";left:auto;";
+  						}
+  						if (meanRevealPosition === "left") {
+  								meanRevealPos = "left:" + meanRevealPositionDistance + ";right:auto;";
+  						}
+  						// run center function
+  						meanCentered();
+
+  						// set all styles for mean-reveal
+  						var $navreveal = "";
+
+  						// re-instate original nav (and call this on window.width functions)
+  						var meanOriginal = function() {
+  							jQuery('.mean-bar,.mean-push').remove();
+  							jQuery(meanContainer).removeClass("mean-container");
+  							jQuery(meanMenu).css('display', meanDisplay);
+  							menuOn = false;
+  							meanMenuExist = false;
+  							jQuery(removeElements).removeClass('mean-remove');
+  						};
+
+  						// navigation reveal
+  						var showMeanMenu = function() {
+  								var meanStyles = "background:"+meanRevealColour+";color:"+meanRevealColour+";"+meanRevealPos;
+  								if (currentWidth <= meanScreenWidth) {
+  								jQuery(removeElements).addClass('mean-remove');
+  									meanMenuExist = true;
+  									// add class to body so we don't need to worry about media queries here, all CSS is wrapped in '.mean-container'
+  									jQuery(meanContainer).addClass("mean-container");
+  									jQuery('.mean-container').prepend('<div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="'+meanStyles+'">Show Navigation</a><nav class="mean-nav"></nav></div>');
+
+  									//push meanMenu navigation into .mean-nav
+  									var meanMenuContents = jQuery(meanMenu).html();
+  									jQuery('.mean-nav').html(meanMenuContents);
+
+  									// remove all classes from EVERYTHING inside meanmenu nav
+  									if(meanRemoveAttrs) {
+  										jQuery('nav.mean-nav ul, nav.mean-nav ul *').each(function() {
+  											// First check if this has mean-remove class
+  											if (jQuery(this).is('.mean-remove')) {
+  												jQuery(this).attr('class', 'mean-remove');
+  											} else {
+  												jQuery(this).removeAttr("class");
+  											}
+  											jQuery(this).removeAttr("id");
+  										});
+  									}
+
+  									// push in a holder div (this can be used if removal of nav is causing layout issues)
+  									jQuery(meanMenu).before('<div class="mean-push" />');
+  									jQuery('.mean-push').css("margin-top",meanNavPush);
+
+  									// hide current navigation and reveal mean nav link
+  									jQuery(meanMenu).hide();
+  									jQuery(".meanmenu-reveal").show();
+
+  									// turn 'X' on or off
+  									jQuery(meanRevealClass).html(meanMenuOpen);
+  									$navreveal = jQuery(meanRevealClass);
+
+  									//hide mean-nav ul
+  									jQuery('.mean-nav ul').hide();
+
+                    $(".logo-mobile").click(function(e) {
+                      e.preventDefault();
+                      $("html, body").animate({ scrollTop: 0 }, 500, function() {
+                        window.location.hash = "";
+                      });
+                      jQuery('.mean-nav ul:first').slideUp();
+                      menuOn = false;
+                      jQuery($navreveal).removeClass("meanclose");
+                      $(".mean-bar").removeClass("expanded");
+                    });
+
+  									// hide sub nav
+  									if(meanShowChildren) {
+  											// allow expandable sub nav(s)
+  											if(meanExpandableChildren){
+  												jQuery('.mean-nav ul ul').each(function() {
+  														if(jQuery(this).children().length){
+  																jQuery(this,'li:first').parent().append('<a class="mean-expand" href="#" style="font-size: '+ meanMenuCloseSize +'">'+ meanExpand +'</a>');
+  														}
+  												});
+  												jQuery('.mean-expand').on("click",function(e){
+  														e.preventDefault();
+  															if (jQuery(this).hasClass("mean-clicked")) {
+  																	jQuery(this).text(meanExpand);
+  																jQuery(this).prev('ul').slideUp(300, function(){});
+  														} else {
+  																jQuery(this).text(meanContract);
+  																jQuery(this).prev('ul').slideDown(300, function(){});
+  														}
+  														jQuery(this).toggleClass("mean-clicked");
+  												});
+  											} else {
+  													jQuery('.mean-nav ul ul').show();
+  											}
+  									} else {
+  											jQuery('.mean-nav ul ul').hide();
+  									}
+
+  									// add last class to tidy up borders
+  									jQuery('.mean-nav ul li').last().addClass('mean-last');
+  									$navreveal.removeClass("meanclose");
+                    $(".mean-bar").removeClass("expanded");
+  									jQuery($navreveal).click(function(e){
+  										e.preventDefault();
+  								    if( menuOn === false ) {
+  												jQuery('.mean-nav ul:first').slideDown();
+  												menuOn = true;
+                          blockMenuHeaderScroll = true;
+  										} else {
+  											jQuery('.mean-nav ul:first').slideUp();
+  											menuOn = false;
+                        blockMenuHeaderScroll = false;
+  										}
+  											$navreveal.toggleClass("meanclose");
+                        $(".mean-bar").toggleClass("expanded");
+
+  											jQuery(removeElements).addClass('mean-remove');
+  									});
+
+  									// for one page websites, reset all variables...
+  									if ( onePage ) {
+  										jQuery('.mean-nav ul > li > a:first-child').on( "click" , function () {
+  											jQuery('.mean-nav ul:first').slideUp();
+  											menuOn = false;
+  											jQuery($navreveal).toggleClass("meanclose");
+                        $(".mean-bar").removeClass("expanded");
+                        blockMenuHeaderScroll = false;
+
+                      });
+  									}
+  							} else {
+  								meanOriginal();
+  							}
+  						};
+
+  						if (!isMobile) {
+  								// reset menu on resize above meanScreenWidth
+  								jQuery(window).resize(function () {
+  										currentWidth = window.innerWidth || document.documentElement.clientWidth;
+  										if (currentWidth > meanScreenWidth) {
+  												meanOriginal();
+  										} else {
+  											meanOriginal();
+  										}
+  										if (currentWidth <= meanScreenWidth) {
+  												showMeanMenu();
+  												meanCentered();
+  										} else {
+  											meanOriginal();
+  										}
+  								});
+  						}
+
+  					jQuery(window).resize(function () {
+  								// get browser width
+  								currentWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  								if (!isMobile) {
+  										meanOriginal();
+  										if (currentWidth <= meanScreenWidth) {
+  												showMeanMenu();
+  												meanCentered();
+  										}
+  								} else {
+  										meanCentered();
+  										if (currentWidth <= meanScreenWidth) {
+  												if (meanMenuExist === false) {
+  														showMeanMenu();
+  												}
+  										} else {
+  												meanOriginal();
+  										}
+  								}
+  						});
+
+  					// run main menuMenu function on load
+  					showMeanMenu();
+  				});
+  		};
+  })(jQuery);
+
+  (function($) {
+
+    $.infieldLabel = function(el, options) {
+
+      // To avoid scope issues, use 'base' instead of 'this'
+      // to reference this class from internal events and functions.
+      var base = this;
+
+      // Access to jQuery and DOM versions of element
+      base.$el = $(el);
+
+      // internal variables
+      base.$input = null;
+
+      base.init = function() {
+        base.options = $.extend({}, $.infieldLabel.defaultOptions, options);
+        base.setup();
       };
 
-      if (closeButton) {
-        closeButton.addEventListener("click", closeModal);
-      }
-      if (overlay) {
-        overlay.addEventListener("click", closeModal);
-      }
 
-      window.addEventListener(
-        "message",
-        function (event) {
-          if (event.origin === "https://ea.sendcockpit.com") {
-            newsletterContent.classList.add("iframe-form-submitted");
-          }
-        },
-        false
-      );
-    }
+      /*
+        --------------------
+        Set up
+        --------------------
+      */
 
-    createModal("#newsletterModal", "#newsletter", initNewsletter);
+      // first time input setup
+      base.setup = function() {
+        base.$input = base.$el.find('input');
+        base.$label = base.$el.find('label');
+
+        // hide label if there's already a value
+        base.blur();
+
+        // bind events
+        base.bind();
+      };
+
+      // binds the focus, blur and change events
+      base.bind = function() {
+        base.$input
+          .on('focus.infield', function() {
+            base.$el
+              .removeClass(base.options.hideClass)
+              .addClass(base.options.focusClass);
+
+          }).on('blur.infield change.infield', function() {
+            base.blur();
+          });
+
+          base.$label.on('click.infield', function() {
+            base.$el
+              .removeClass(base.options.hideClass)
+              .addClass(base.options.focusClass);
+
+            base.$input.focus();
+          });
+      };
+
+      base.blur = function() {
+        if (base.$input.val() !== '') {
+          base.$el
+            .removeClass(base.options.focusClass)
+            .addClass(base.options.hideClass);
+
+        } else {
+          base.$el
+            .removeClass(base.options.focusClass + ' ' + base.options.hideClass);
+        }
+      };
+
+      /*
+        --------------------
+        Initialize
+        --------------------
+      */
+      base.init();
+    };
+
+
+    /*
+      --------------------
+      Options
+      --------------------
+    */
+
+    $.infieldLabel.defaultOptions = {
+      focusClass: 'placeholder-focus',
+      hideClass: 'placeholder-hide'
+    };
+
+    $.fn.infieldLabel = function(options) {
+      this.each(function() {
+        new $.infieldLabel(this, options);
+      });
+    };
+
+  })(jQuery);
+
+  $(document).ready(function (){
+
+    $(".fixed-menu").meanmenu({
+      onePage: false,
+      meanScreenWidth: "684"
+    });
+
   });
 
 })();

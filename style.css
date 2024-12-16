@@ -181,35 +181,6 @@ template {
   display: none;
 }
 
-@font-face {
-  font-family: "Biko Bold";
-  src: url("$assets-biko_bold-woff") format("woff");
-  src: url("$assets-biko_bold-eot") format("truetype");
-  src: url("$assets-biko_bold-ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "CalibreWeb Light";
-  src: url("$assets-calibreweb-light-eot"); /*IE9 compat*/
-  src: url("$assets-calibreweb-light-woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "CalibreWeb Bold";
-  src: url("$assets-calibreweb-bold-eot"); /*IE9 compat*/
-  src: url("$assets-calibreweb-bold-woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "tts-iconfont";
-  src: url("$assets-tts-iconfont-woff") format("woff");
-  src: url("$assets-tts-iconfont-ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 /***** Base *****/
 * {
   box-sizing: border-box;
@@ -219,7 +190,7 @@ body {
   background-color: $background_color;
   color: $text_color;
   font-family: $text_font;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -1245,7 +1216,7 @@ ul {
   }
 }
 .sub-nav input[type=search]::after {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 /***** Blocks *****/
@@ -1433,7 +1404,7 @@ ul {
   margin: 0;
 }
 .recent-activity-item-parent {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 .recent-activity-item-parent, .recent-activity-item-link {
@@ -1569,7 +1540,7 @@ ul {
 }
 
 .article-list-item {
-  font-size: 20px;
+  font-size: 16px;
   padding: 15px 0;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1603,7 +1574,7 @@ ul {
 
 .section-list-item {
   border-bottom: 1px solid #ddd;
-  font-size: 20px;
+  font-size: 16px;
   padding: 15px 0;
 }
 .section-list-item:first-child {
@@ -1884,7 +1855,7 @@ ul {
   text-align: center;
 }
 .article-votes-question {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: normal;
   margin-bottom: 0;
 }
@@ -1936,7 +1907,7 @@ ul {
 }
 
 .sidenav-title {
-  font-size: 18px;
+  font-size: 15px;
   position: relative;
   font-weight: 600;
 }
@@ -3490,7 +3461,7 @@ ul {
   }
 }
 .request-sidebar h2 {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   position: relative;
 }
@@ -3963,7 +3934,7 @@ ul {
   margin-right: 0;
 }
 .profile-badges-item-title, .profile-badges-item-metadata-title {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 10px;
 }
 .profile-badges-item-title {
@@ -4368,7 +4339,7 @@ ul {
   align-items: center;
 }
 .search-result-title {
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 0;
 }
 .search-result-votes, .search-result-meta-count {
@@ -4747,8 +4718,7 @@ zd-summary-block {
 }
 [dir=rtl] zd-summary-block {
   border-right-color: #859fa1;
-}
-
+}@import "infieldLabel.css";
 @font-face {
   font-family: "Biko Bold";
   src: url("$assets-biko_bold-woff") format("woff");
@@ -4935,6 +4905,10 @@ zd-summary-block {
   float: left;
   width: 13.8888888889%;
   margin: 0 1.3888888889%;
+}
+
+header.header {
+  display: none;
 }
 
 main {
@@ -5228,6 +5202,220 @@ main {
   display: none;
   visibility: hidden;
   content: "";
+}
+
+/*mean menu*/
+/*! #######################################################################
+	MeanMenu 2.0.7
+	--------
+	To be used with jquery.meanmenu.js by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
+####################################################################### */
+/* hide the link until viewport size is reached */
+a.meanmenu-reveal {
+  display: none;
+}
+
+/* when under viewport size, .mean-container is added to body */
+.mean-container .mean-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.mean-container .mean-bar {
+  float: left;
+  width: 100%;
+  position: fixed;
+  background: #ff4600;
+  min-height: 50px;
+  z-index: 999999;
+  max-height: 100%;
+  overflow: scroll;
+}
+
+.mean-container a.meanmenu-reveal {
+  width: 30px;
+  height: 22px;
+  position: absolute;
+  right: 0;
+  margin-right: 5%;
+  top: 12px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  text-indent: -9999em;
+  line-height: 22px;
+  font-size: 1px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.mean-container a.meanmenu-reveal span:first-child,
+.mean-container a.meanmenu-reveal span:last-child {
+  position: absolute;
+  top: 7px;
+  width: 100%;
+}
+
+.mean-container a.meanmenu-reveal span {
+  display: block;
+  background: #fff;
+  height: 2px;
+  margin-top: 5px;
+}
+
+.mean-container a.meanmenu-reveal.meanclose span {
+  opacity: 0;
+}
+
+.mean-container a.meanmenu-reveal.meanclose span:last-child,
+.mean-container a.meanmenu-reveal.meanclose span:first-child {
+  opacity: 1;
+}
+
+.mean-container a.meanmenu-reveal.meanclose span:first-child {
+  transform: rotate(-45deg);
+}
+
+.mean-container a.meanmenu-reveal.meanclose span:last-child {
+  transform: rotate(45deg);
+}
+
+.mean-container .mean-nav {
+  float: left;
+  width: 100%;
+  background: #ff4600;
+  margin-top: 50px;
+}
+
+.mean-container .mean-nav ul {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.mean-container .mean-nav ul li {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.mean-container .mean-nav ul li a {
+  display: block;
+  float: left;
+  width: 90%;
+  margin: 0;
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 5%;
+}
+
+.mean-container .mean-nav ul li li a {
+  width: 80%;
+  padding: 1em 10%;
+  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  text-shadow: none !important;
+  visibility: visible;
+}
+
+.mean-container .mean-nav ul li.mean-last a {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.mean-container .mean-nav ul li li li a {
+  width: 70%;
+  padding: 1em 15%;
+}
+
+.mean-container .mean-nav ul li li li li a {
+  width: 60%;
+  padding: 1em 20%;
+}
+
+.mean-container .mean-nav ul li li li li li a {
+  width: 50%;
+  padding: 1em 25%;
+}
+
+.mean-container .mean-nav ul li a:hover {
+  background: #252525;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mean-container .mean-nav ul li a.mean-expand {
+  margin-top: 1px;
+  width: 26px;
+  height: 32px;
+  padding: 12px !important;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  border: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.mean-container .mean-nav ul li a.mean-expand:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.mean-container .mean-push {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.mean-nav .wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Fix for box sizing on Foundation Framework etc. */
+.mean-container .mean-bar,
+.mean-container .mean-bar * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.mean-remove {
+  display: none !important;
+}
+
+/*menu menu fixes*/
+.mean-container a.meanmenu-reveal span {
+  transition: all 200ms;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+}
+
+.mean-container .mean-nav ul {
+  margin-top: 100px;
+}
+
+.mean-container .mean-nav ul li a {
+  font-family: "BikoBold", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 23px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.15rem;
 }
 
 .tentacle-footer {

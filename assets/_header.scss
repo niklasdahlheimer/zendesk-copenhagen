@@ -298,3 +298,30 @@ main {
   visibility: hidden;
   content: "";
 }
+
+
+/*mean menu*/
+@import "meanmenu.scss";
+
+/*menu menu fixes*/
+.mean-container a.meanmenu-reveal span {
+  transition: all 200ms;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+}
+
+.mean-container .mean-nav ul {
+  margin-top: 100px;
+}
+
+.mean-container .mean-nav ul li a {
+  font-family: 'BikoBold', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 23px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.15rem;
+}

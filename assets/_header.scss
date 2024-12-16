@@ -301,9 +301,24 @@ main {
 
 
 /*mean menu*/
-@import "meanmenu.scss";
+@import "meanMenu/meanmenu";
 
-/*menu menu fixes*/
+/*!*menu menu fixes*!*/
+
+
+.mean-container .mean-bar {
+  position: fixed;
+  background: $brand_color;
+  min-height: 50px;
+  max-height: 100%;
+}
+
+.mean-container a.meanmenu-reveal span:first-child,
+.mean-container a.meanmenu-reveal span:last-child {
+  position: absolute;
+  top: 7px;
+  width: 100%;
+}
 .mean-container a.meanmenu-reveal span {
   transition: all 200ms;
   -webkit-transition: all 200ms;
@@ -312,16 +327,29 @@ main {
   -o-transition: all 200ms;
 }
 
+.mean-container .mean-nav {
+  float: left;
+  width: 100%;
+  background: $brand_color;
+  margin-top: 50px;
+}
+
+.mean-container .mean-nav ul li{
+  background: $brand_color;
+}
+
 .mean-container .mean-nav ul {
   margin-top: 100px;
 }
 
 .mean-container .mean-nav ul li a {
-  font-family: 'BikoBold', Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  line-height: 40px;
-  margin-bottom: 23px;
+  font-family: 'Biko Bold', Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   margin-bottom: 1.15rem;
 }
+
+.mean-container .mean-nav, .mean-container .mean-bar {
+  background-color: $brand_color;
+}
+

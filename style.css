@@ -4718,7 +4718,72 @@ zd-summary-block {
 }
 [dir=rtl] zd-summary-block {
   border-right-color: #859fa1;
-}@import "infieldLabel.css";
+}/* infieldLabel styles */
+.infield-label {
+  display: block;
+  position: relative;
+}
+
+.infield-label label {
+  bottom: 0;
+  color: #777;
+  display: block;
+  left: 0;
+  line-height: 39px;
+  margin: 0;
+  right: 0;
+  top: 0;
+}
+
+.js .infield-label label {
+  cursor: text;
+  font-size: 14px;
+  padding: 0 10px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.placeholder-focus label {
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  bottom: auto;
+  color: #fff;
+  line-height: 32px;
+  right: auto;
+  top: -40px;
+}
+
+.no-rgba .placeholder-focus label {
+  background-color: #111;
+}
+
+.placeholder-focus label:after {
+  border-top: 5px solid rgba(0, 0, 0, 0.8);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  bottom: -5px;
+  content: "";
+  display: block;
+  height: 0;
+  left: 10px;
+  position: absolute;
+}
+
+.no-rgba .placeholder-focus label:after {
+  border-top-color: #111;
+}
+
+.infield-label-image.placeholder-focus label {
+  top: -122px;
+}
+
+.placeholder-hide label {
+  bottom: auto;
+  left: -9999px;
+  right: auto;
+  top: -9999px;
+}
+
 @font-face {
   font-family: "Biko Bold";
   src: url("$assets-biko_bold-woff") format("woff");
@@ -5206,9 +5271,12 @@ main {
 
 /*mean menu*/
 /*! #######################################################################
+
 	MeanMenu 2.0.7
 	--------
+
 	To be used with jquery.meanmenu.js by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
+
 ####################################################################### */
 /* hide the link until viewport size is reached */
 a.meanmenu-reveal {
@@ -5216,28 +5284,23 @@ a.meanmenu-reveal {
 }
 
 /* when under viewport size, .mean-container is added to body */
-.mean-container .mean-bar::-webkit-scrollbar {
-  display: none;
-}
-
 .mean-container .mean-bar {
   float: left;
   width: 100%;
-  position: fixed;
-  background: #ff4600;
-  min-height: 50px;
+  position: relative;
+  background: #0c1923;
+  padding: 4px 0;
+  min-height: 42px;
   z-index: 999999;
-  max-height: 100%;
-  overflow: scroll;
 }
 
 .mean-container a.meanmenu-reveal {
-  width: 30px;
+  width: 22px;
   height: 22px;
+  padding: 13px 13px 11px 13px;
   position: absolute;
+  top: 0;
   right: 0;
-  margin-right: 5%;
-  top: 12px;
   cursor: pointer;
   color: #fff;
   text-decoration: none;
@@ -5250,46 +5313,23 @@ a.meanmenu-reveal {
   font-weight: 700;
 }
 
-.mean-container a.meanmenu-reveal span:first-child,
-.mean-container a.meanmenu-reveal span:last-child {
-  position: absolute;
-  top: 7px;
-  width: 100%;
-}
-
 .mean-container a.meanmenu-reveal span {
   display: block;
   background: #fff;
-  height: 2px;
-  margin-top: 5px;
-}
-
-.mean-container a.meanmenu-reveal.meanclose span {
-  opacity: 0;
-}
-
-.mean-container a.meanmenu-reveal.meanclose span:last-child,
-.mean-container a.meanmenu-reveal.meanclose span:first-child {
-  opacity: 1;
-}
-
-.mean-container a.meanmenu-reveal.meanclose span:first-child {
-  transform: rotate(-45deg);
-}
-
-.mean-container a.meanmenu-reveal.meanclose span:last-child {
-  transform: rotate(45deg);
+  height: 3px;
+  margin-top: 3px;
 }
 
 .mean-container .mean-nav {
   float: left;
   width: 100%;
-  background: #ff4600;
-  margin-top: 50px;
+  background: #0c1923;
+  margin-top: 44px;
 }
 
 .mean-container .mean-nav ul {
   padding: 0;
+  margin: 0;
   width: 100%;
   list-style-type: none;
 }
@@ -5304,12 +5344,14 @@ a.meanmenu-reveal {
   display: block;
   float: left;
   width: 90%;
+  padding: 1em 5%;
   margin: 0;
   text-align: left;
   color: #fff;
+  border-top: 1px solid #383838;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
   text-decoration: none;
   text-transform: uppercase;
-  padding: 0 5%;
 }
 
 .mean-container .mean-nav ul li li a {
@@ -5384,8 +5426,7 @@ a.meanmenu-reveal {
 }
 
 /* Fix for box sizing on Foundation Framework etc. */
-.mean-container .mean-bar,
-.mean-container .mean-bar * {
+.mean-container .mean-bar, .mean-container .mean-bar * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -5395,7 +5436,21 @@ a.meanmenu-reveal {
   display: none !important;
 }
 
-/*menu menu fixes*/
+/*!*menu menu fixes*!*/
+.mean-container .mean-bar {
+  position: fixed;
+  background: $brand_color;
+  min-height: 50px;
+  max-height: 100%;
+}
+
+.mean-container a.meanmenu-reveal span:first-child,
+.mean-container a.meanmenu-reveal span:last-child {
+  position: absolute;
+  top: 7px;
+  width: 100%;
+}
+
 .mean-container a.meanmenu-reveal span {
   transition: all 200ms;
   -webkit-transition: all 200ms;
@@ -5404,18 +5459,30 @@ a.meanmenu-reveal {
   -o-transition: all 200ms;
 }
 
+.mean-container .mean-nav {
+  float: left;
+  width: 100%;
+  background: $brand_color;
+  margin-top: 50px;
+}
+
+.mean-container .mean-nav ul li {
+  background: $brand_color;
+}
+
 .mean-container .mean-nav ul {
   margin-top: 100px;
 }
 
 .mean-container .mean-nav ul li a {
-  font-family: "BikoBold", Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  line-height: 40px;
-  margin-bottom: 23px;
+  font-family: "Biko Bold", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   margin-bottom: 1.15rem;
+}
+
+.mean-container .mean-nav, .mean-container .mean-bar {
+  background-color: $brand_color;
 }
 
 .tentacle-footer {

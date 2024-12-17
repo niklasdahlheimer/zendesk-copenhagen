@@ -109,7 +109,7 @@
 .fixed-menu .menu-wrapper .logo-column .logo {
   height: 11px;
   width: 114px;
-  background-image: url("./assets/tentaclesync-logo-wortmarke-weiss-2x.png");
+  background-image: url($assets-tentaclesync-logo-wortmarke-weiss-2x-png);
   background-size: 100%;
   margin-left: 118px;
   margin-top: 12px;
@@ -141,11 +141,6 @@
 
 .fixed-menu.white .logo-column:after {
   color: #f5f5f5;
-}
-
-.fixed-menu.white .menu-wrapper .logo-column .logo {
-  background-image: url("./assets/tentaclesync-logo-wortmarke-schwarz-2x.png");
-  background-size: 100%;
 }
 
 .fixed-menu.white .menu-wrapper .menu-link {

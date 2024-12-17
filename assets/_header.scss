@@ -1,3 +1,4 @@
+
 $tentacle_header_height: 40px;
 
 // remove original zendesk header
@@ -10,4 +11,5 @@ main {
 }
 
 @import "menu.mobile";
-@import "menu";
+@import "menu.browser";
+

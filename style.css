@@ -4821,13 +4821,12 @@ zd-summary-block {
 }
 
 .with-icon::before {
-  font-family: "tts-iconfont";
+  font-family: "tts-iconfont", emoji;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 50px;
@@ -5309,7 +5308,7 @@ a.meanmenu-reveal {
 .fixed-menu .menu-wrapper .logo-column .logo {
   height: 11px;
   width: 114px;
-  background-image: url("./assets/tentaclesync-logo-wortmarke-weiss-2x.png");
+  background-image: url($assets-tentaclesync-logo-wortmarke-weiss-2x-png);
   background-size: 100%;
   margin-left: 118px;
   margin-top: 12px;
@@ -5341,11 +5340,6 @@ a.meanmenu-reveal {
 
 .fixed-menu.white .logo-column:after {
   color: #f5f5f5;
-}
-
-.fixed-menu.white .menu-wrapper .logo-column .logo {
-  background-image: url("./assets/tentaclesync-logo-wortmarke-schwarz-2x.png");
-  background-size: 100%;
 }
 
 .fixed-menu.white .menu-wrapper .menu-link {
@@ -5513,7 +5507,7 @@ a.meanmenu-reveal {
 .tentacle-footer .logo-column .logo {
   height: 11px;
   width: 114px;
-  background: url("./assets/tentaclesync-logo-wortmarke-weiss-2x.png");
+  background: url($assets-tentaclesync-logo-wortmarke-weiss-2x-png);
   background-size: 100%;
   margin-top: 15px;
   z-index: 10;
@@ -5998,7 +5992,6 @@ iframe {
     height: 980px;
     margin: 0 auto;
     max-width: 600px;
-    max-width: unset;
   }
   #newsletterModal .modal-content.iframe-form-submitted {
     height: 500px !important;
@@ -6072,12 +6065,21 @@ h3 {
   max-width: 800px;
 }
 
-/*hide zendesk elements*/
-#preview-bar-container {
-  display: none;
-}
-
+/*hide zendesk elements in development of menu*/
 .container {
   padding: 5%;
   min-height: 80vh;
+}
+
+.category-container .category-content .page-header {
+  flex-direction: column;
+}
+
+#new-request-form .bYrtfK, #new-request-form .jXuueJ {
+  background-color: white;
+}
+#new-request-form button.cEtdUc {
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
 }

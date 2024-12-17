@@ -8,13 +8,12 @@
 }
 
 .with-icon::before {
-  font-family: "tts-iconfont";
+  font-family: "tts-iconfont", emoji ;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 50px;

@@ -19,12 +19,16 @@ h3 {
   max-width: 800px;
 }
 
-/*hide zendesk elements*/
+/*hide zendesk elements in development of menu*/
 #preview-bar-container{
-  display: none;
+  //display: none;
 }
 
 .container {
   padding: 5%;
   min-height: 80vh;
+}
+
+.category-container .category-content .page-header {
+  flex-direction: column;
 }

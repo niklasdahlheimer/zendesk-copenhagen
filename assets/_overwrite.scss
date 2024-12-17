@@ -18,3 +18,13 @@ h3 {
   margin-right: auto;
   max-width: 800px;
 }
+
+/*hide zendesk elements*/
+#preview-bar-container{
+  display: none;
+}
+
+.container {
+  padding: 5%;
+  min-height: 80vh;
+}

@@ -45,3 +45,18 @@
     }
   }
 }
+
+
+// list sections vertically on phones
+
+@media (max-width: 500px) {
+ .section.home .row{
+   display: flex;
+   flex-direction: column;
+
+   * {
+     width: unset;
+   }
+
+ }
+}

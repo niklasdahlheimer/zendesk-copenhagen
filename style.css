@@ -4785,32 +4785,25 @@ zd-summary-block {
 
 @font-face {
   font-family: "Biko Bold";
-  src: url("$assets-biko_bold-woff") format("woff");
-  src: url("$assets-biko_bold-eot") format("truetype");
-  src: url("$assets-biko_bold-ttf") format("truetype");
+  src: url("$assets-biko_bold-woff") format("woff"), url("$assets-biko_bold-eot") format("truetype"), url("$assets-biko_bold-ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "CalibreWeb Light";
-  src: url("$assets-calibreweb-light-eot"); /*IE9 compat*/
   src: url("$assets-calibreweb-light-woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "CalibreWeb Bold";
-  src: url("$assets-calibreweb-bold-eot"); /*IE9 compat*/
   src: url("$assets-calibreweb-bold-woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "tts-iconfont";
-  src: url("$assets-tts-iconfont-eot"); /*IE9 compat*/
-  src: url("$assets-tts-iconfont-woff") format("woff");
-  src: url("$assets-tts-iconfont-ttf") format("truetype");
-  src: url("$assets-tts-iconfont-svg") format("svg");
+  src: url("$assets-tts-iconfont-woff") format("woff"), url("$assets-tts-iconfont-ttf") format("truetype"), url("$assets-tts-iconfont-svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
